@@ -85,7 +85,7 @@ goto :EOF & goto :EOF & goto :EOF & goto :EOF & goto :EOF & goto :EOF & goto :EO
 rem ####################################################################################################################################################################################################
 :TasksDisable_A
 schtasks /Query /FO csv>> MassKill_%timestamp%_SCH.bkp
-for /f "delims=," %%a in ('schtasks /Query /FO csv ^| findstr /v /c:"\"TaskName\",\"Next Run Time\",\"Status\"" ') do schtasks /Change /Disable /TN %%a && echo schtasks /Change /Disable /TN %%a >> MassKill_Loops.bat
+for /f "delims=," %%a in ('schtasks /Query /FO csv ^| findstr /v /c:"\"TaskName\",\"Next Run Time\",\"Status\"" ') do schtasks /End /TN %%a && schtasks /Change /Disable /TN %%a && echo schtasks /Change /Disable /TN %%a >> MassKill_Loops.bat
 
 rem ####################################################################################################################################################################################################
 goto :EOF & goto :EOF & goto :EOF & goto :EOF & goto :EOF & goto :EOF & goto :EOF & goto :EOF & goto :EOF & goto :EOF & goto :EOF & goto :EOF & goto :EOF & goto :EOF & goto :EOF & goto :EOF & goto :EOF
