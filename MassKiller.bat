@@ -4,6 +4,8 @@ if not "%~1" == "DoIt!" echo line command must be '%0 DoIt!' && pause && goto :E
 rem safety check. do not continue if the person just execute it. yeah....
 rem must put "DoIt!" in the parameter to continue or erase here upwards to continue.
 rem yeah , i consider some people retarded/dumb
+rem ...
+rem if i know someone like that? hell yeah i know. hes actually me. i am talking about myself
 
 @echo off
 @if defined SKIPAHEADDUNNOWHYLOL @if "%SKIPAHEADDUNNOWHYLOL%" == "YES" @goto :beginmadness >nul
